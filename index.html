@@ -425,7 +425,7 @@ select:focus{border-color:var(--orange);}
       <div class="cta-gu">30-DAY MONEY-BACK GUARANTEE · 4 NEW CLIENTS / MONTH · RESULTS OR FULL REFUND</div>
     </div>
     <div>
-      <button class="btn-cta" onclick="window.open('https://api.leadconnectorhq.com/widget/booking/WJbKsOOQxIDZ8rI8MX94','_blank')">Apply for strategy call →</button>
+      <button class="btn-cta" onclick="window.open('https://www.opiferai.com','_blank')">Apply for strategy call →</button>
       <button class="btn-cta-s" onclick="goStep2()">← Adjust my numbers</button>
     </div>
   </div>
@@ -460,7 +460,7 @@ document.addEventListener('dragstart',e=>e.preventDefault());
 const GHL = {
   token:      'pit-29c465ea-457d-45de-9283-9be008273dcd',
   locationId: 'kf03sg4aHjfWvufJY17x',
-  calendar:   'https://api.leadconnectorhq.com/widget/booking/WJbKsOOQxIDZ8rI8MX94',
+  calendar:   'https://www.opiferai.com',
   fields: {
     businessType:   'calculator_business_type',
     weeklyEnq:      'calculator_weekly_enquiries',
@@ -481,7 +481,7 @@ const BIZ = {
     d2:'Local Google ranking suppressed by a reviews deficit vs competitors.',
     d3:'Patients who enquired but did not book — lost within 48 hours without automated follow-up.',
     b1:'Benchmark: 28–35% of dental calls missed during chair time',b2:'Metro benchmark: top clinics average 120+ reviews',b3:'Industry: 7–12 follow-ups to convert a price-comparing patient'},
-  medical:{name:'Medical & allied health',enq:28,txn:190,rev:18,team:2,rg:0.24,rm:2.0,rl:0.15,fn:0.55,fr:0.30,
+  medical:{name:'Medical & allied health',enq:28,txn:190,rev:18,team:2,rg:0.24,rm:2.0,rl:0.15,fn:0.55,fr:0.22,
     ctx:'Allied health practices lose an estimated <strong>22–28%</strong> of new patient enquiries to slow response. Reviews drive <strong>67%</strong> of new patient decisions.',
     d1:'New patient enquiries that convert at dramatically lower rates when response exceeds 5 minutes.',
     d2:'Patients comparing practices — a reviews deficit costs measurable click-through in local search.',
@@ -579,8 +579,8 @@ function doCalc(){
   const revs=parseInt(document.getElementById('sl-rev').value);
   const respMin=parseInt(document.getElementById('sl-resp').value);
   const enqM=enqW*4.33;
-  const rMap={5:0,30:0.3,60:0.55,240:0.75,1440:0.90,2880:1.0};
-  const rMult=rMap[respMin]||0.55;
+  const rMap={5:0,30:0.3,60:0.40,240:0.75,1440:0.90,2880:1.0};
+  const rMult=rMap[respMin]||0.40;
   const g1=enqM*(b.rg*rMult)*txn;
   const compRevs=Math.max(revs*b.rm,revs+25);
   const gapRatio=Math.min((compRevs-revs)/Math.max(compRevs,1),0.85);
