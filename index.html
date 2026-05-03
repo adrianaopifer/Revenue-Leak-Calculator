@@ -425,7 +425,7 @@ select:focus{border-color:var(--orange);}
       <div class="cta-gu">30-DAY MONEY-BACK GUARANTEE · 4 NEW CLIENTS / MONTH · RESULTS OR FULL REFUND</div>
     </div>
     <div>
-      <button class="btn-cta" onclick="onclick="window.open('https://api.leadconnectorhq.com/widget/booking/WJbKsOOQxIDZ8rI8MX94','_blank')">Apply for strategy call →</button>
+      <button class="btn-cta" onclick="window.open('https://api.leadconnectorhq.com/widget/booking/WJbKsOOQxIDZ8rI8MX94','_blank')">Apply for strategy call →</button>
       <button class="btn-cta-s" onclick="goStep2()">← Adjust my numbers</button>
     </div>
   </div>
@@ -458,7 +458,7 @@ document.addEventListener('dragstart',e=>e.preventDefault());
    Then paste the new token here and redeploy.
 */
 const GHL = {
-  token:      'pit-3968baea-b569-4cba-b983-44664af8e287',
+  workerUrl:  'https://opifer-ghl-proxy.adriana-88e.workers.dev',
   locationId: 'kf03sg4aHjfWvufJY17x',
   calendar:   'https://api.leadconnectorhq.com/widget/booking/WJbKsOOQxIDZ8rI8MX94',
   fields: {
@@ -665,13 +665,9 @@ async function pushToGHL(firstName,lastName,email,phone){
       {key:GHL.fields.recovery,        field_value:String(Math.round(recovery))},
     ]
   };
-  const res=await fetch('https://services.leadconnectorhq.com/contacts/',{
+  const res=await fetch(GHL.workerUrl,{
     method:'POST',
-    headers:{
-      'Authorization':'Bearer '+GHL.token,
-      'Content-Type':'application/json',
-      'Version':'2021-07-28'
-    },
+    headers:{'Content-Type':'application/json'},
     body:JSON.stringify(payload)
   });
   if(!res.ok){
