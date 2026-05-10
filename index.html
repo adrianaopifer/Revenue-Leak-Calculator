@@ -721,9 +721,9 @@ async function pushToGHL(firstName,lastName,email,phone){
       {key:GHL.fields.avgTransaction,  field_value:String(txn)},
       {key:GHL.fields.reviews,         field_value:String(revs)},
       {key:GHL.fields.responseTime,    field_value:rLabel},
-      {key:GHL.fields.annualLeak,      field_value:String(Math.round(annual))},
-      {key:GHL.fields.monthlyLeak,     field_value:String(Math.round(monthly))},
-      {key:GHL.fields.recovery,        field_value:String(Math.round(recovery))},
+      {key:GHL.fields.annualLeak,      field_value:Math.round(annual).toLocaleString('en-US')},
+      {key:GHL.fields.monthlyLeak,     field_value:Math.round(monthly).toLocaleString('en-US')},
+      {key:GHL.fields.recovery,        field_value:Math.round(recovery).toLocaleString('en-US')},
     ]
   };
   const res=await fetch(GHL.workerUrl,{
