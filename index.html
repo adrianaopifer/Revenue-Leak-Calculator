@@ -49,7 +49,32 @@ body::after{
 .hero-sub{font-family:'Inter',sans-serif;font-size:13px;color:rgba(255,255,255,.65);line-height:1.55;margin-top:8px;max-width:440px;}
 .hero-stats{display:flex;gap:28px;flex-shrink:0;}
 .hs .hn{font-family:'Manrope',sans-serif;font-weight:800;font-size:28px;color:var(--orange);letter-spacing:-1px;line-height:1;}
-.hs .hl{font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(255,255,255,.4);letter-spacing:1px;text-transform:uppercase;margin-top:3px;}
+.hs .hl{font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(255,255,255,.4);letter-spacing:1px;text-transform:uppercase;margin-top:3px;max-width:150px;line-height:1.5;}
+
+/* ── MARKET SELECTOR ── */
+.mkt-label{font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2px;color:var(--charcoal);margin-bottom:8px;}
+.mkt-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+.mkt{display:flex;align-items:center;gap:7px;background:#fff;border:1.5px solid var(--rule);border-radius:20px;padding:8px 16px;cursor:pointer;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:var(--charcoal);transition:all .15s;}
+.mkt:hover{border-color:#ccc;}
+.mkt.sel{border-color:var(--orange);background:var(--cream);color:var(--orange);}
+.mkt .mkt-cur{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:400;color:#999;letter-spacing:.5px;}
+.mkt.sel .mkt-cur{color:var(--orange);}
+
+/* ── SOURCES PANEL ── */
+.src-panel{background:#fff;border:1px solid var(--rule);border-radius:var(--rl);margin-bottom:16px;overflow:hidden;}
+.src-panel summary{cursor:pointer;padding:16px 20px;font-family:'Manrope',sans-serif;font-weight:700;font-size:13px;color:var(--charcoal);list-style:none;display:flex;align-items:center;justify-content:space-between;user-select:none;}
+.src-panel summary::-webkit-details-marker{display:none;}
+.src-panel summary::after{content:'+';font-family:'JetBrains Mono',monospace;font-size:16px;color:var(--orange);}
+.src-panel[open] summary::after{content:'−';}
+.src-panel summary .src-tag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal);font-weight:400;margin-left:10px;}
+.src-body{padding:0 20px 18px;border-top:1px solid var(--rule);}
+.src-item{padding:13px 0;border-bottom:1px solid var(--sand2);}
+.src-item:last-child{border-bottom:none;}
+.src-name{font-family:'Manrope',sans-serif;font-weight:700;font-size:12px;color:var(--charcoal);margin-bottom:3px;}
+.src-name a{color:var(--orange);text-decoration:none;border-bottom:1px solid var(--cream);}
+.src-name a:hover{border-bottom-color:var(--orange);}
+.src-find{font-family:'Inter',sans-serif;font-size:12px;color:#666;line-height:1.6;}
+.src-note{font-family:'JetBrains Mono',monospace;font-size:9px;color:#aaa;letter-spacing:.3px;margin-top:4px;line-height:1.7;}
 
 /* ── PROGRESS ── */
 .prog{background:var(--sand2);padding:11px 28px;border-bottom:1px solid var(--rule);flex-shrink:0;}
@@ -175,7 +200,7 @@ select:focus{border-color:var(--orange);}
 .rh-num.co{color:var(--coral);}
 .rh-ns{font-family:'Inter',sans-serif;font-size:11px;color:rgba(255,255,255,.4);margin-top:6px;}
 .rh-wm{position:absolute;right:-40px;bottom:-50px;width:200px;opacity:.05;pointer-events:none;}
-.as{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px;}
+.as{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:20px;}
 @media(max-width:560px){.as{grid-template-columns:1fr 1fr;}}
 .ac{background:#fff;border:1px solid var(--rule);border-radius:var(--r);padding:11px 13px;}
 .ac-k{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#aaa;margin-bottom:3px;}
@@ -251,11 +276,11 @@ select:focus{border-color:var(--orange);}
     <div class="hero-left">
       <div class="eyebrow">· Empowering Clarity ·</div>
       <h1>Your business generates more than it's <em>capturing.</em></h1>
-      <p class="hero-sub">Most service businesses lose 20–35% of monthly revenue to three invisible gaps. Find out exactly what that number is — free, in under 5 minutes.</p>
+      <p class="hero-sub">Missed calls, slow responses and weak follow-up quietly drain revenue from service businesses every month. Get a conservative, source-backed estimate of yours — free, in under 5 minutes.</p>
     </div>
     <div class="hero-stats">
-      <div class="hs"><div class="hn">21×</div><div class="hl">Conversion within 5 min</div></div>
-      <div class="hs"><div class="hn">47h</div><div class="hl">Avg response time</div></div>
+      <div class="hs"><div class="hn">21×</div><div class="hl">More likely to qualify a lead answered in 5 min vs 30 — MIT / InsideSales</div></div>
+      <div class="hs"><div class="hn">42h</div><div class="hl">Avg first response to a new lead — Harvard Business Review</div></div>
       <div class="hs"><div class="hn">3</div><div class="hl">Fixable gaps</div></div>
     </div>
   </div>
@@ -277,9 +302,15 @@ select:focus{border-color:var(--orange);}
 
 <!-- STEP 1 -->
 <div id="step-1">
-  <div class="sl">Step 01 — Business type</div>
+  <div class="sl">Step 01 — Business type & market</div>
   <div class="st">What kind of business are you running?</div>
-  <p class="ss">Select your category. Benchmarks are calibrated to your specific business type and market.</p>
+  <p class="ss">Select your market and category. Currency, default values and benchmarks adjust to your selection.</p>
+  <div class="mkt-label">Your market</div>
+  <div class="mkt-row">
+    <div class="mkt sel" data-mkt="au" onclick="selectMkt(this)">🇦🇺 Australia <span class="mkt-cur">AUD</span></div>
+    <div class="mkt" data-mkt="us" onclick="selectMkt(this)">🇺🇸 USA <span class="mkt-cur">USD</span></div>
+  </div>
+  <div class="mkt-label">Your business type</div>
   <div class="bg">
     <div class="bc" data-type="dental" onclick="selectType(this)">
       <div class="bc-icon">🦷</div>
@@ -326,7 +357,7 @@ select:focus{border-color:var(--orange);}
   <div class="ig2">
     <div class="ig">
       <div class="ig-top"><span class="ig-label">Weekly inbound enquiries</span><span class="ig-val" id="v-enq">35</span></div>
-      <div class="ig-hint">Calls, web forms, social DMs — all channels</div>
+      <div class="ig-hint" id="hint-enq">Calls, web forms, social DMs — all channels</div>
       <input type="range" id="sl-enq" min="3" max="250" step="1" value="35" oninput="slv('enq')">
     </div>
     <div class="ig">
@@ -432,14 +463,14 @@ select:focus{border-color:var(--orange);}
 <div id="step-4" class="hidden">
   <div class="sl">Step 04 — Your revenue leak report</div>
   <div class="st" id="r-title">Revenue leak report</div>
-  <p class="ss">Based on your inputs and <span id="r-btype">your</span> industry benchmarks. All figures use conservative floor estimates.</p>
+  <p class="ss">A modelled estimate based on your inputs, published research and conservative assumptions for <span id="r-btype">your</span> businesses in <span id="r-mkt">your market</span>. Every assumption is listed in the sources panel below.</p>
 
   <div class="res-hero">
     <svg class="rh-wm" viewBox="0 0 512 512"><use href="#foxWhite"/></svg>
     <div class="rh-lbl">OPIFER REVENUE LEAK REPORT · CONFIDENTIAL · NOT FOR REPRODUCTION</div>
     <div class="rh-grid">
       <div><div class="rh-nl">Estimated annual revenue leak</div><div class="rh-num or" id="r-annual">$0</div><div class="rh-ns">From leads already in your funnel — no new ad spend required</div></div>
-      <div><div class="rh-nl">Monthly revenue leak</div><div class="rh-num co" id="r-monthly">$0</div><div class="rh-ns">Recoverable within 60–90 days of AI system deployment</div></div>
+      <div><div class="rh-nl">Monthly revenue leak</div><div class="rh-num co" id="r-monthly">$0</div><div class="rh-ns">Modelled estimate — every assumption is listed in Sources & methodology below</div></div>
     </div>
   </div>
 
@@ -453,15 +484,20 @@ select:focus{border-color:var(--orange);}
   </div>
 
   <div class="rec-box">
-    <div><div class="rec-l">Conservative recovery estimate</div><p class="rec-b">Using the OPIFER Growth System — Voice AI, Reviews AI, Workflow AI and Conversation AI — clients in your category typically recover <strong>60–70% of their calculated leak within 60–90 days</strong> of deployment.</p></div>
-    <div class="rec-n"><div class="rec-num" id="r-rec">$0</div><div class="rec-s">RECOVERABLE / MONTH</div></div>
+    <div><div class="rec-l">Recovery target</div><p class="rec-b">With the OPIFER Growth System — Voice AI, Reviews AI, Workflow AI and Conversation AI — closing these three gaps is an engineering problem, not a guess. A realistic target is recovering <strong>50–70% of the modelled leak within 60–90 days</strong> of deployment. The figure shown uses the 60% midpoint.</p></div>
+    <div class="rec-n"><div class="rec-num" id="r-rec">$0</div><div class="rec-s">TARGET / MONTH</div></div>
   </div>
+
+  <details class="src-panel">
+    <summary>Sources & methodology <span class="src-tag">How we calculated this</span></summary>
+    <div class="src-body" id="src-body"></div>
+  </details>
 
   <div class="cta-p">
     <div>
       <div class="cta-ey">· Next step ·</div>
       <div class="cta-ti">Get your full audit —<br>free, no obligation.</div>
-      <p class="cta-bo">In 40 minutes we'll map your three revenue gaps in detail, show you what an AI system looks like for your specific business, and give you a concrete recovery plan. Whether you proceed or not, the audit has value.</p>
+      <p class="cta-bo">In 40 minutes we'll replace this model's assumptions with your actual numbers — call logs, response times, conversion rates — and map a concrete recovery plan for your three gaps. Whether you proceed or not, the audit has value.</p>
       <div class="cta-gu">30-DAY MONEY-BACK GUARANTEE · 4 NEW CLIENTS / MONTH · RESULTS OR FULL REFUND</div>
     </div>
     <div>
@@ -470,7 +506,7 @@ select:focus{border-color:var(--orange);}
     </div>
   </div>
 
-  <p class="disc">METHODOLOGY · Calculations use conservative benchmarks from CEB/Gartner response-time research, BrightLocal local search studies, and OPIFER client data. Results are indicative estimates. © 2026 OPIFER by ADMA Consulting Pty Ltd. All rights reserved. Unauthorised reproduction is strictly prohibited.</p>
+  <p class="disc">METHODOLOGY · This is a modelled estimate, not a measurement. It combines your inputs with published research — the MIT / InsideSales Lead Response Management Study (2007), Harvard Business Review "The Short Life of Online Sales Leads" (2011), BrightLocal's Local Consumer Review Survey, and industry call-answering studies — plus clearly-labelled model assumptions listed above. Defaults are starting points; your audit replaces them with measured data. © 2026 OPIFER by ADMA Consulting Pty Ltd. All rights reserved. Unauthorised reproduction is strictly prohibited.</p>
 </div>
 
 </div><!-- /wrap -->
@@ -513,48 +549,80 @@ const GHL = {
   }
 };
 
-/* ── BUSINESS TYPE DATA ── */
+/* ── MARKET CONFIG ──
+   mult = approximate local-price conversion from AUD base defaults.
+   These set the *starting position* of the sliders only — users adjust
+   to their real numbers. Validate per-market defaults over time. */
+const MKT = {
+  au:{name:'Australia',cur:'A$',code:'AUD',mult:1,   txn:{min:50,max:20000,step:50},     phone:'+61',wa:false},
+  us:{name:'the USA',  cur:'US$',code:'USD',mult:0.75,txn:{min:50,max:15000,step:50},    phone:'+1', wa:false}
+};
+
+/* ── BUSINESS TYPE DATA ──
+   miss   = share of enquiries missed or handled too slowly to count
+            (model assumption informed by Invoca ~27% home-services
+            missed-call rate and 411 Locals 62% SMB unanswered rate —
+            defaults sit at or below those published ranges)
+   conv   = baseline enquiry→customer close rate (model assumption)
+   rm     = typical competitor review multiple (model assumption)
+   rlift  = enquiry lift forgone from a weaker review profile (model assumption)
+   frRec  = share of non-converted enquiries recoverable via systematic
+            follow-up (model assumption, scaled to each vertical's close rate)
+   txn    = default avg transaction value in AUD base (scaled per market) */
 const BIZ = {
-  dental:{name:'Dental clinic',enq:40,txn:450,rev:22,team:2,rg:0.30,rm:2.2,rl:0.18,fn:0.62,fr:0.32,
-    ctx:'Dental clinics miss an estimated <strong>28–35%</strong> of inbound calls during peak chair time. The average metro practice has 22 reviews — top competitors have 120+.',
-    d1:'Missed calls during appointments and after-hours enquiries that go to voicemail.',
-    d2:'Local Google ranking suppressed by a reviews deficit vs competitors.',
-    d3:'Patients who enquired but did not book — lost within 48 hours without automated follow-up.',
-    b1:'Benchmark: 28–35% of dental calls missed during chair time',b2:'Metro benchmark: top clinics average 120+ reviews',b3:'Industry: 7–12 follow-ups to convert a price-comparing patient'},
-  medical:{name:'Medical & allied health',enq:28,txn:190,rev:18,team:2,rg:0.24,rm:2.0,rl:0.15,fn:0.55,fr:0.22,
-    ctx:'Allied health practices lose an estimated <strong>22–28%</strong> of new patient enquiries to slow response. Reviews drive <strong>67%</strong> of new patient decisions.',
-    d1:'New patient enquiries that convert at dramatically lower rates when response exceeds 5 minutes.',
-    d2:'Patients comparing practices — a reviews deficit costs measurable click-through in local search.',
-    d3:'Non-converted enquiries who received no follow-up and booked with a competitor.',
-    b1:'Benchmark: 22–28% of new enquiries receive a delayed or missed response',b2:'Benchmark: 67% of patients check reviews before their first booking',b3:'Industry: conversion rate doubles with 3–6 follow-up attempts'},
-  trade:{name:'Trade business',enq:22,txn:980,rev:14,team:1,rg:0.38,rm:2.5,rl:0.22,fn:0.70,fr:0.35,
-    ctx:'Trade businesses face the highest response gap — field-based teams mean <strong>35–45%</strong> of calls go unanswered during active jobs. Quotes not followed up within 24 hours convert at a fraction of the rate.',
-    d1:'Calls that arrive while the team is on a job — every missed call is a quote handed to the next tradesperson who answers.',
-    d2:'Customers choose the highest-rated tradesperson. A thin reviews profile loses jobs before the first conversation.',
-    d3:'Quotes sent but never followed up. 70% of trade enquiries don\'t convert on first contact.',
-    b1:'Benchmark: 35–45% of trade calls missed during field work',b2:'Benchmark: top local tradespeople average 80+ Google reviews',b3:'Industry: a quote not followed up within 48 hours loses 55%+ of prospects'},
-  realestate:{name:'Real estate agency',enq:18,txn:9500,rev:12,team:3,rg:0.20,rm:1.8,rl:0.12,fn:0.78,fr:0.28,
-    ctx:'Real estate agencies have the highest per-transaction value — making every unconverted lead extremely costly. <strong>78%</strong> of vendor enquiries don\'t convert on first contact.',
-    d1:'Vendor and buyer enquiries arriving outside business hours that receive no response within the critical first-hour window.',
-    d2:'Review volume is a primary ranking signal. Vendors compare digital presence before selecting an agent.',
-    d3:'The long sales cycle requires weeks of follow-up. Without automation, 70%+ of warm leads go to more consistent competitors.',
-    b1:'Benchmark: 20%+ of real estate enquiries missed outside business hours',b2:'Benchmark: market leaders have 3–5× the review volume of mid-market agencies',b3:'Industry: vendor leads require 8–15 touchpoints before a listing decision'},
-  professional:{name:'Professional services',enq:14,txn:820,rev:10,team:2,rg:0.22,rm:1.9,rl:0.14,fn:0.65,fr:0.30,
-    ctx:'Professional service firms lose an estimated <strong>20–25%</strong> of new enquiries to slow response. Client lifetime value makes every lost lead disproportionately costly.',
-    d1:'New client enquiries that receive a same-day or next-day response — in professional services, speed signals competence.',
-    d2:'Online reviews now precede referrals as the primary trust signal. A thin profile loses clients before any conversation starts.',
-    d3:'Enquiries that didn\'t convert after an initial consultation — lost because no follow-up kept the relationship warm.',
-    b1:'Benchmark: 20–25% of initial enquiries receive a delayed response',b2:'Benchmark: reviews influence 60%+ of new professional service decisions',b3:'Industry: conversion doubles with 4+ follow-up touches after a proposal'},
-  beauty:{name:'Beauty & wellness',enq:55,txn:270,rev:30,team:2,rg:0.33,rm:2.8,rl:0.24,fn:0.58,fr:0.33,
-    ctx:'Beauty and aesthetic clinics have the <strong>highest reviews sensitivity</strong> of any category — reviews drive the majority of new bookings. Missing an enquiry by 30 minutes often means losing the booking permanently.',
-    d1:'DMs, web enquiries and calls that go unanswered during treatment hours — the most frequent missed-contact category in aesthetics.',
-    d2:'Review volume is a primary purchase driver. Competitors accumulating reviews weekly compound their advantage month by month.',
-    d3:'Clients who enquired but didn\'t book — lost because no automated follow-up reminded them at the right moment.',
-    b1:'Benchmark: 30–38% of aesthetic clinic enquiries go unanswered within 30 minutes',b2:'Benchmark: top metro aesthetic clinics have 200–400+ Google reviews',b3:'Industry: rebooking rate doubles with a structured post-visit follow-up sequence'}
+  dental:{name:'Dental clinic',enq:40,txn:450,rev:22,team:2,miss:0.30,conv:0.40,rm:2.2,rlift:0.10,frRec:0.08,
+    ctx:'SMB call studies report between 27% (Invoca, home services) and 62% (411 Locals, cross-industry) of inbound calls going unanswered — and dental clinics are especially exposed during chair time. BrightLocal\'s annual survey finds roughly 3 in 4 consumers regularly read reviews before choosing a local business.',
+    d1:'Calls and enquiries during appointments and after hours that get no response — or one too slow to count. Leads answered within 5 minutes are 21× more likely to qualify than at 30 minutes.',
+    d2:'New-patient enquiries that never arrive because competitors with stronger review profiles win the comparison in local search.',
+    d3:'Patients who enquired but didn\'t book, and received no structured follow-up before choosing elsewhere.',
+    b1:'Sources: MIT/InsideSales 2007 · HBR 2011 · miss-rate assumption below Invoca/411 Locals published range',
+    b2:'Source: BrightLocal Local Consumer Review Survey · lift % is a model assumption',
+    b3:'Model assumption: follow-up recovers 8% of non-converted enquiries'},
+  medical:{name:'Medical & allied health',enq:28,txn:190,rev:18,team:2,miss:0.24,conv:0.45,rm:2.0,rlift:0.10,frRec:0.09,
+    ctx:'Harvard Business Review research found the average business takes 42 hours to first-respond to a new lead — while patients comparing practices typically book with whoever answers first. BrightLocal finds roughly 3 in 4 consumers regularly read reviews before choosing a local business.',
+    d1:'New-patient enquiries that convert at sharply lower rates once response time stretches past minutes into hours — or go unanswered entirely after hours.',
+    d2:'Patients comparing practices online — a thinner review profile than nearby competitors costs visibility and trust before any conversation starts.',
+    d3:'Enquiries that didn\'t book and received no follow-up sequence before choosing another practice.',
+    b1:'Sources: MIT/InsideSales 2007 · HBR 2011 (42h avg response) · miss-rate is a model assumption',
+    b2:'Source: BrightLocal Local Consumer Review Survey · lift % is a model assumption',
+    b3:'Model assumption: follow-up recovers 9% of non-converted enquiries'},
+  trade:{name:'Trade business',enq:22,txn:980,rev:14,team:1,miss:0.30,conv:0.35,rm:2.5,rlift:0.10,frRec:0.08,
+    ctx:'Invoca\'s call analytics report a ~27% missed-call rate in home services — the most directly measured vertical in this calculator — because field-based teams physically can\'t answer mid-job. Every missed call is a quote handed to the next tradesperson who picks up.',
+    d1:'Calls arriving while the team is on the tools. Industry call studies put home-services missed-call rates near 27% — before counting slow responses to web enquiries.',
+    d2:'Customers shortlist the highest-rated local tradesperson. A thin review profile loses jobs before the first conversation.',
+    d3:'Quotes sent but never chased. Without systematic follow-up, a share of winnable jobs quietly goes to more persistent competitors.',
+    b1:'Sources: Invoca (~27% home-services missed calls) · MIT/InsideSales 2007 · HBR 2011',
+    b2:'Source: BrightLocal Local Consumer Review Survey · lift % is a model assumption',
+    b3:'Model assumption: follow-up recovers 8% of non-converted enquiries'},
+  realestate:{name:'Real estate agency',enq:18,txn:9500,rev:12,team:3,miss:0.18,conv:0.08,rm:1.8,rlift:0.06,frRec:0.015,
+    ctx:'Real estate carries the highest value per transaction in this calculator — so even a small number of mishandled enquiries is costly. HBR\'s research found firms responding to a lead within an hour were ~7× more likely to qualify it than those waiting longer.',
+    d1:'Vendor and buyer enquiries arriving after hours or mid-inspection that miss the critical first-response window.',
+    d2:'Vendors compare agents\' digital presence before a listing appointment. A weaker review profile than competing agencies costs enquiries silently.',
+    d3:'Long sales cycles demand weeks of consistent follow-up. Without automation, warm vendor leads drift to more persistent agencies.',
+    b1:'Sources: MIT/InsideSales 2007 · HBR 2011 (7× within 1 hour) · miss-rate is a model assumption',
+    b2:'Source: BrightLocal Local Consumer Review Survey · lift % is a model assumption',
+    b3:'Model assumption: follow-up recovers 1.5% of non-converted enquiries (≈20% lift on close rate)'},
+  professional:{name:'Professional services',enq:14,txn:820,rev:10,team:2,miss:0.22,conv:0.30,rm:1.9,rlift:0.08,frRec:0.07,
+    ctx:'In professional services, response speed signals competence — yet HBR\'s research found the average business takes 42 hours to first-respond to a new lead. High client lifetime value makes every mishandled enquiry disproportionately costly.',
+    d1:'New-client enquiries answered next-day instead of within minutes — in a category where the first credible responder usually wins the engagement.',
+    d2:'Reviews increasingly precede referrals as the first trust check. A thin profile loses prospects before any conversation.',
+    d3:'Prospects who enquired or received a proposal, then heard nothing — lost for lack of a structured follow-up sequence.',
+    b1:'Sources: MIT/InsideSales 2007 · HBR 2011 (42h avg response) · miss-rate is a model assumption',
+    b2:'Source: BrightLocal Local Consumer Review Survey · lift % is a model assumption',
+    b3:'Model assumption: follow-up recovers 7% of non-converted enquiries'},
+  beauty:{name:'Beauty & wellness',enq:55,txn:270,rev:30,team:2,miss:0.30,conv:0.45,rm:2.8,rlift:0.12,frRec:0.10,
+    ctx:'Aesthetic and wellness bookings are highly review-driven and highly impulsive — an enquiry unanswered during treatment hours is often a booking lost permanently. BrightLocal finds roughly 3 in 4 consumers regularly read reviews before choosing a local business.',
+    d1:'DMs, messages and calls that go unanswered during treatment hours — the most frequent missed-contact pattern in this category.',
+    d2:'Review volume is a primary booking driver. Competitors adding reviews weekly compound their search advantage month after month.',
+    d3:'Clients who enquired but didn\'t book — and never received the automated nudge that would have converted them.',
+    b1:'Sources: MIT/InsideSales 2007 · HBR 2011 · miss-rate assumption within Invoca/411 Locals published range',
+    b2:'Source: BrightLocal Local Consumer Review Survey · lift % is a model assumption',
+    b3:'Model assumption: follow-up recovers 10% of non-converted enquiries'}
 };
 
 /* ── STATE ── */
 let bizType = null;
+let mktKey = 'au';
 let calcResults = {};
 
 /* ── NAVIGATION ── */
@@ -589,29 +657,53 @@ function setPills(a){
   });
 }
 
-/* ── BUSINESS TYPE ── */
+/* ── BUSINESS TYPE & MARKET ── */
 function selectType(card){
   document.querySelectorAll('.bc').forEach(c=>c.classList.remove('sel'));
   card.classList.add('sel');
   bizType=card.dataset.type;
 }
+function selectMkt(pill){
+  document.querySelectorAll('.mkt').forEach(p=>p.classList.remove('sel'));
+  pill.classList.add('sel');
+  mktKey=pill.dataset.mkt;
+  // Sync the lead-form country code with the chosen market
+  const cs=document.getElementById('f-country');
+  for(let i=0;i<cs.options.length;i++){
+    if(cs.options[i].value===MKT[mktKey].phone){cs.selectedIndex=i;break;}
+  }
+  updatePhonePlaceholder();
+}
 
 /* ── DEFAULTS ── */
+function txnDefault(t){
+  const m=MKT[mktKey];
+  const raw=BIZ[t].txn*m.mult;
+  return Math.max(m.txn.min,Math.round(raw/m.txn.step)*m.txn.step);
+}
 function loadDefaults(t){
-  const b=BIZ[t];
+  const b=BIZ[t],m=MKT[mktKey];
   document.getElementById('s2t').textContent=b.name+' — your numbers';
-  document.getElementById('ctx-txt').innerHTML=b.ctx;
-  setSl('enq',b.enq);setSl('txn',b.txn);setSl('rev',b.rev);setSl('team',b.team);
+  document.getElementById('ctx-txt').innerHTML=b.ctx+(m.wa?' In '+m.name+', WhatsApp is a primary enquiry channel — include it in your count below.':'');
+  document.getElementById('hint-enq').textContent=m.wa?'Calls, WhatsApp, web forms, social DMs — all channels':'Calls, web forms, social DMs — all channels';
+  const txnSlider=document.getElementById('sl-txn');
+  txnSlider.min=m.txn.min;txnSlider.max=m.txn.max;txnSlider.step=m.txn.step;
+  setSl('enq',b.enq);setSl('txn',txnDefault(t));setSl('rev',b.rev);setSl('team',b.team);
   document.getElementById('sl-resp').value='60';
 }
 function setSl(id,val){document.getElementById('sl-'+id).value=val;slv(id);}
 function slv(id){
   const v=parseInt(document.getElementById('sl-'+id).value);
   const el=document.getElementById('v-'+id);
-  el.textContent=id==='txn'?'$'+v.toLocaleString():v;
+  el.textContent=id==='txn'?MKT[mktKey].cur+v.toLocaleString():v;
 }
 
-/* ── CALCULATION ── */
+/* ── CALCULATION ──
+   Conservative model. Every leaked enquiry is valued at close-rate × one
+   transaction — never at full transaction value, and never at lifetime value.
+   Gap 1: enquiries lost to missed/slow response × close rate × txn
+   Gap 2: enquiries forgone to a weaker review profile × close rate × txn
+   Gap 3: non-converted answered enquiries × follow-up recovery rate × txn */
 function doCalc(){
   const b=BIZ[bizType];
   const enqW=parseInt(document.getElementById('sl-enq').value);
@@ -619,22 +711,27 @@ function doCalc(){
   const revs=parseInt(document.getElementById('sl-rev').value);
   const respMin=parseInt(document.getElementById('sl-resp').value);
   const enqM=enqW*4.33;
-  const rMap={5:0,30:0.3,60:0.40,240:0.75,1440:0.90,2880:1.0};
-  const rMult=rMap[respMin]||0.40;
-  const g1=enqM*(b.rg*rMult)*txn;
+  const rMap={5:0,30:0.25,60:0.40,240:0.65,1440:0.85,2880:1.0};
+  const rMult=rMap[respMin]??0.40;
+  const lostShare=b.miss*rMult;                          // share of all enquiries lost to response gap
+  const g1=enqM*lostShare*b.conv*txn;
   const compRevs=Math.max(revs*b.rm,revs+25);
-  const gapRatio=Math.min((compRevs-revs)/Math.max(compRevs,1),0.85);
-  const g2=enqM*gapRatio*b.rl*txn;
-  const g3=enqM*b.fn*b.fr*txn;
+  const gapRatio=Math.min((compRevs-revs)/Math.max(compRevs,1),0.75);
+  const g2=enqM*gapRatio*b.rlift*b.conv*txn;
+  const answered=enqM*(1-lostShare);
+  const nonConv=answered*(1-b.conv);
+  const g3=nonConv*b.frRec*txn;
   const monthly=g1+g2+g3;
   const rLabels={5:'< 5 min',30:'< 30 min',60:'< 1 hour',240:'< 4 hours',1440:'Next day',2880:'2+ days'};
-  calcResults={b,enqW,txn,revs,respMin,g1,g2,g3,monthly,annual:monthly*12,recovery:monthly*0.65,rLabel:rLabels[respMin]||'< 1 hour'};
+  calcResults={b,enqW,txn,revs,respMin,enqM,lostShare,gapRatio,nonConv,g1,g2,g3,monthly,annual:monthly*12,recovery:monthly*0.6,rLabel:rLabels[respMin]||'< 1 hour'};
 }
 
 function renderResults(){
-  const {b,enqW,txn,revs,g1,g2,g3,monthly,annual,recovery,rLabel}=calcResults;
+  const {b,enqW,txn,revs,enqM,lostShare,gapRatio,nonConv,g1,g2,g3,monthly,annual,recovery,rLabel}=calcResults;
+  const m=MKT[mktKey];
   document.getElementById('r-title').textContent=b.name+' — revenue leak report';
   document.getElementById('r-btype').textContent=b.name.toLowerCase();
+  document.getElementById('r-mkt').textContent=m.name;
   document.getElementById('r-annual').textContent=fmt(annual);
   document.getElementById('r-monthly').textContent=fmt(monthly);
   document.getElementById('r-rec').textContent=fmt(recovery);
@@ -644,17 +741,56 @@ function renderResults(){
   document.getElementById('g1-d').textContent=b.d1;
   document.getElementById('g2-d').textContent=b.d2;
   document.getElementById('g3-d').textContent=b.d3;
-  document.getElementById('g1-b').textContent=b.b1;
-  document.getElementById('g2-b').textContent=b.b2;
-  document.getElementById('g3-b').textContent=b.b3;
-  const data=[{k:'Weekly enquiries',v:enqW+' /week'},{k:'Avg transaction',v:'$'+txn.toLocaleString()},{k:'Google reviews',v:revs+' reviews'},{k:'Response time',v:rLabel}];
+  // Show the actual formula behind each gap — transparency builds trust
+  const tv=m.cur+txn.toLocaleString();
+  document.getElementById('g1-b').textContent=
+    '= '+Math.round(enqM)+' enquiries/mo × '+pct(lostShare)+' lost to response gap × '+pct(b.conv)+' close rate × '+tv+' · '+b.b1;
+  document.getElementById('g2-b').textContent=
+    '= '+Math.round(enqM)+' enquiries/mo × '+pct(gapRatio)+' review deficit × '+pct(b.rlift)+' enquiry lift × '+pct(b.conv)+' close rate × '+tv+' · '+b.b2;
+  document.getElementById('g3-b').textContent=
+    '= '+Math.round(nonConv)+' non-converted enquiries/mo × '+pct(b.frRec)+' recovered × '+tv+' · '+b.b3;
+  const data=[{k:'Market',v:m.name+' ('+m.code+')'},{k:'Weekly enquiries',v:enqW+' /week'},{k:'Avg transaction',v:tv},{k:'Google reviews',v:revs+' reviews'},{k:'Response time',v:rLabel}];
   document.getElementById('assumes').innerHTML=data.map(d=>`<div class="ac"><div class="ac-k">${d.k}</div><div class="ac-v">${d.v}</div></div>`).join('');
+  renderSources();
 }
 
+function pct(x){return (Math.round(x*1000)/10).toLocaleString()+'%';}
+
 function fmt(n){
-  if(n>=1000000)return '$'+(n/1000000).toFixed(1)+'M';
-  if(n>=1000)return '$'+Math.round(n/1000).toLocaleString()+'K';
-  return '$'+Math.round(n).toLocaleString();
+  const c=MKT[mktKey].cur;
+  if(n>=1e9)return c+(n/1e9).toFixed(1)+'B';
+  if(n>=1e6)return c+(n/1e6).toFixed(1)+'M';
+  if(n>=1000)return c+Math.round(n/1000).toLocaleString()+'K';
+  return c+Math.round(n).toLocaleString();
+}
+
+/* ── SOURCES PANEL ── */
+function renderSources(){
+  const m=MKT[mktKey];
+  const items=[
+    {n:'Lead Response Management Study — Dr James Oldroyd (MIT) & InsideSales.com, 2007',
+     f:'Leads contacted within 5 minutes were 21× more likely to be qualified than leads contacted after 30 minutes; the odds of even making contact drop roughly 100×. Tracked 15,000+ leads across 100+ companies over three years.',
+     note:'NOTE: VENDOR-PLATFORM DATA, NOT A RANDOMISED TRIAL — BUT THE DIRECTIONAL FINDING HAS BEEN REPRODUCED REPEATEDLY SINCE.'},
+    {n:'"The Short Life of Online Sales Leads" — <a href="https://hbr.org/2011/03/the-short-life-of-online-sales-leads" target="_blank" rel="noopener">Harvard Business Review, March 2011</a> (Oldroyd, McElheran, Elkington)',
+     f:'Audited 2,241 US companies: average first response to a web lead was 42 hours, and firms responding within an hour were ~7× more likely to qualify the lead than those that waited longer — 60× more likely than those waiting 24+ hours.',
+     note:'USED FOR: THE RESPONSE-TIME MULTIPLIER IN GAP 01.'},
+    {n:'Local Consumer Review Survey — <a href="https://www.brightlocal.com/research/local-consumer-review-survey/" target="_blank" rel="noopener">BrightLocal (annual)</a>',
+     f:'Roughly 3 in 4 consumers regularly or always read online reviews when browsing local businesses, and Google is the most-used review platform by a wide margin.',
+     note:'USED FOR: THE DIRECTION OF GAP 02. THE ENQUIRY-LIFT % ITSELF IS A MODEL ASSUMPTION — SEE BELOW.'},
+    {n:'SMB call-answering studies — 411 Locals & Invoca',
+     f:'411 Locals monitored 85 businesses across 58 industries and found only 37.8% of calls answered live. Invoca\'s call analytics report a ~27% missed-call rate in home services.',
+     note:'NOTE: FIGURES AS REPORTED BY THE PUBLISHERS; PRIMARY REPORTS ARE NOT PUBLICLY HOSTED. OUR MISS-RATE DEFAULTS (18–30%) SIT AT OR BELOW THESE PUBLISHED RANGES.'}
+  ];
+  if(m.wa){
+    items.push({n:'WhatsApp reach — Meta / Statista',
+      f:'WhatsApp is the dominant messaging channel in Spain and Latin America, with reported penetration above 90% of internet users in Mexico and Colombia — making unanswered WhatsApp enquiries part of the same response gap as missed calls.',
+      note:'USED FOR: ENQUIRY-CHANNEL CONTEXT IN '+m.name.toUpperCase()+'.'});
+  }
+  items.push({n:'OPIFER model assumptions (editable)',
+    f:'Close rate per business type ('+pct(calcResults.b.conv)+' for '+calcResults.b.name.toLowerCase()+'), review-driven enquiry lift ('+pct(calcResults.b.rlift)+'), follow-up recovery rate ('+pct(calcResults.b.frRec)+' of non-converted enquiries), competitor review multiple, and currency-adjusted defaults. These are stated assumptions, not measured facts — deliberately set on the conservative side.',
+    note:'THE FREE AUDIT REPLACES EVERY ASSUMPTION WITH YOUR MEASURED DATA: CALL LOGS, RESPONSE TIMES AND REAL CONVERSION RATES.'});
+  document.getElementById('src-body').innerHTML=items.map(s=>
+    `<div class="src-item"><div class="src-name">${s.n}</div><div class="src-find">${s.f}</div><div class="src-note">${s.note}</div></div>`).join('');
 }
 
 /* ── FORM VALIDATION ── */
@@ -709,21 +845,22 @@ function formatPhone(raw){
 /* ── GHL API CALL ── */
 async function pushToGHL(firstName,lastName,email,phone){
   const {b,enqW,txn,revs,rLabel,monthly,annual,recovery}=calcResults;
+  const m=MKT[mktKey];
   const payload={
     locationId:GHL.locationId,
     firstName,lastName,email,
     phone:formatPhone(phone),
-    tags:['calculator-lead'],
-    source:'Revenue Leak Calculator — opiferai.com',
+    tags:['calculator-lead','market-'+mktKey,'lang-en'],
+    source:'Revenue Leak Calculator — opiferai.com ('+m.name+')',
     customFields:[
       {key:GHL.fields.businessType,    field_value:b.name},
       {key:GHL.fields.weeklyEnq,       field_value:String(enqW)},
-      {key:GHL.fields.avgTransaction,  field_value:String(txn)},
+      {key:GHL.fields.avgTransaction,  field_value:m.code+' '+txn.toLocaleString('en-US')},
       {key:GHL.fields.reviews,         field_value:String(revs)},
       {key:GHL.fields.responseTime,    field_value:rLabel},
-      {key:GHL.fields.annualLeak,      field_value:Math.round(annual).toLocaleString('en-US')},
-      {key:GHL.fields.monthlyLeak,     field_value:Math.round(monthly).toLocaleString('en-US')},
-      {key:GHL.fields.recovery,        field_value:Math.round(recovery).toLocaleString('en-US')},
+      {key:GHL.fields.annualLeak,      field_value:m.code+' '+Math.round(annual).toLocaleString('en-US')},
+      {key:GHL.fields.monthlyLeak,     field_value:m.code+' '+Math.round(monthly).toLocaleString('en-US')},
+      {key:GHL.fields.recovery,        field_value:m.code+' '+Math.round(recovery).toLocaleString('en-US')},
     ]
   };
   const res=await fetch(GHL.workerUrl,{
