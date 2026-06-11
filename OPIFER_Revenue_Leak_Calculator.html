@@ -309,9 +309,6 @@ select:focus{border-color:var(--orange);}
   <div class="mkt-row">
     <div class="mkt sel" data-mkt="au" onclick="selectMkt(this)">🇦🇺 Australia <span class="mkt-cur">AUD</span></div>
     <div class="mkt" data-mkt="us" onclick="selectMkt(this)">🇺🇸 USA <span class="mkt-cur">USD</span></div>
-    <div class="mkt" data-mkt="es" onclick="selectMkt(this)">🇪🇸 Spain <span class="mkt-cur">EUR</span></div>
-    <div class="mkt" data-mkt="mx" onclick="selectMkt(this)">🇲🇽 Mexico <span class="mkt-cur">MXN</span></div>
-    <div class="mkt" data-mkt="co" onclick="selectMkt(this)">🇨🇴 Colombia <span class="mkt-cur">COP</span></div>
   </div>
   <div class="mkt-label">Your business type</div>
   <div class="bg">
@@ -558,10 +555,7 @@ const GHL = {
    to their real numbers. Validate per-market defaults over time. */
 const MKT = {
   au:{name:'Australia',cur:'A$',code:'AUD',mult:1,   txn:{min:50,max:20000,step:50},     phone:'+61',wa:false},
-  us:{name:'the USA',  cur:'US$',code:'USD',mult:0.75,txn:{min:50,max:15000,step:50},    phone:'+1', wa:false},
-  es:{name:'Spain',    cur:'€',  code:'EUR',mult:0.55,txn:{min:30,max:12000,step:10},    phone:'+34',wa:true},
-  mx:{name:'Mexico',   cur:'MX$',code:'MXN',mult:9,  txn:{min:400,max:180000,step:100},  phone:'+52',wa:true},
-  co:{name:'Colombia', cur:'COP $',code:'COP',mult:1800,txn:{min:80000,max:36000000,step:20000},phone:'+57',wa:true}
+  us:{name:'the USA',  cur:'US$',code:'USD',mult:0.75,txn:{min:50,max:15000,step:50},    phone:'+1', wa:false}
 };
 
 /* ── BUSINESS TYPE DATA ──
@@ -856,7 +850,7 @@ async function pushToGHL(firstName,lastName,email,phone){
     locationId:GHL.locationId,
     firstName,lastName,email,
     phone:formatPhone(phone),
-    tags:['calculator-lead','market-'+mktKey],
+    tags:['calculator-lead','market-'+mktKey,'lang-en'],
     source:'Revenue Leak Calculator — opiferai.com ('+m.name+')',
     customFields:[
       {key:GHL.fields.businessType,    field_value:b.name},
