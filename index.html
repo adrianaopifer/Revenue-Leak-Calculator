@@ -484,7 +484,7 @@ select:focus{border-color:var(--orange);}
   </div>
 
   <div class="rec-box">
-    <div><div class="rec-l">Recovery target</div><p class="rec-b">With the OPIFER Growth System — Voice AI, Reviews AI, Workflow AI and Conversation AI — closing these three gaps is an engineering problem, not a guess. A realistic target is recovering <strong>50–70% of the modelled leak within 60–90 days</strong> of deployment. The figure shown uses the 60% midpoint.</p></div>
+    <div><div class="rec-l">Strategy-led recovery</div><p class="rec-b">We start with strategy, not software. First we pinpoint which of your three gaps is costing you most and design the plan to close it. Then, from the full AI stack — voice, conversation, reviews, content and workflow — we bring in only the tools that earn their place on ROI for your business, never a one-size bundle. A realistic target is recovering <strong>50–70% of the modelled leak within 60–90 days</strong>. The figure shown uses the conservative 60% midpoint.</p></div>
     <div class="rec-n"><div class="rec-num" id="r-rec">$0</div><div class="rec-s">TARGET / MONTH</div></div>
   </div>
 
@@ -498,7 +498,6 @@ select:focus{border-color:var(--orange);}
       <div class="cta-ey">· Next step ·</div>
       <div class="cta-ti">Get your full audit —<br>free, no obligation.</div>
       <p class="cta-bo">In 40 minutes we'll replace this model's assumptions with your actual numbers — call logs, response times, conversion rates — and map a concrete recovery plan for your three gaps. Whether you proceed or not, the audit has value.</p>
-      <div class="cta-gu">30-DAY MONEY-BACK GUARANTEE · 4 NEW CLIENTS / MONTH · RESULTS OR FULL REFUND</div>
     </div>
     <div>
       <button class="btn-cta" onclick="window.open('https://api.leadconnectorhq.com/widget/booking/WJbKsOOQxIDZ8rI8MX94','_blank')">Apply for strategy call →</button>
@@ -506,7 +505,7 @@ select:focus{border-color:var(--orange);}
     </div>
   </div>
 
-  <p class="disc">METHODOLOGY · This is a modelled estimate, not a measurement. It combines your inputs with published research — the MIT / InsideSales Lead Response Management Study (2007), Harvard Business Review "The Short Life of Online Sales Leads" (2011), BrightLocal's Local Consumer Review Survey, and industry call-answering studies — plus clearly-labelled model assumptions listed above. Defaults are starting points; your audit replaces them with measured data. © 2026 OPIFER by ADMA Consulting Pty Ltd. All rights reserved. Unauthorised reproduction is strictly prohibited.</p>
+  <p class="disc">METHODOLOGY · This is a modelled estimate, not a measurement. It combines your inputs with published research — the seminal MIT / InsideSales Lead Response Management Study (2007) and Harvard Business Review "The Short Life of Online Sales Leads" (2011), corroborated by recent speed-to-lead benchmarks (RevenueHero, 2024), plus BrightLocal's Local Consumer Review Survey (2026 edition) and industry call-answering studies — alongside clearly-labelled model assumptions listed above. Defaults are starting points; your audit replaces them with measured data. © 2026 OPIFER by ADMA Consulting Pty Ltd. All rights reserved. Unauthorised reproduction is strictly prohibited.</p>
 </div>
 
 </div><!-- /wrap -->
@@ -769,14 +768,17 @@ function renderSources(){
   const m=MKT[mktKey];
   const items=[
     {n:'Lead Response Management Study — Dr James Oldroyd (MIT) & InsideSales.com, 2007',
-     f:'Leads contacted within 5 minutes were 21× more likely to be qualified than leads contacted after 30 minutes; the odds of even making contact drop roughly 100×. Tracked 15,000+ leads across 100+ companies over three years.',
-     note:'NOTE: VENDOR-PLATFORM DATA, NOT A RANDOMISED TRIAL — BUT THE DIRECTIONAL FINDING HAS BEEN REPRODUCED REPEATEDLY SINCE.'},
+     f:'Leads contacted within 5 minutes were 21× more likely to be qualified than leads contacted after 30 minutes; the odds of even making contact drop roughly 100×. Tracked 15,000+ leads across 100+ companies over three years. This is the seminal study the whole field still cites.',
+     note:'NOTE: VENDOR-PLATFORM DATA, NOT A RANDOMISED TRIAL. OLDER, BUT THE DIRECTIONAL FINDING HAS BEEN REPRODUCED REPEATEDLY SINCE — AND BUYER EXPECTATIONS HAVE ONLY INTENSIFIED (SEE 2024 BENCHMARK BELOW).'},
     {n:'"The Short Life of Online Sales Leads" — <a href="https://hbr.org/2011/03/the-short-life-of-online-sales-leads" target="_blank" rel="noopener">Harvard Business Review, March 2011</a> (Oldroyd, McElheran, Elkington)',
      f:'Audited 2,241 US companies: average first response to a web lead was 42 hours, and firms responding within an hour were ~7× more likely to qualify the lead than those that waited longer — 60× more likely than those waiting 24+ hours.',
-     note:'USED FOR: THE RESPONSE-TIME MULTIPLIER IN GAP 01.'},
-    {n:'Local Consumer Review Survey — <a href="https://www.brightlocal.com/research/local-consumer-review-survey/" target="_blank" rel="noopener">BrightLocal (annual)</a>',
-     f:'Roughly 3 in 4 consumers regularly or always read online reviews when browsing local businesses, and Google is the most-used review platform by a wide margin.',
-     note:'USED FOR: THE DIRECTION OF GAP 02. THE ENQUIRY-LIFT % ITSELF IS A MODEL ASSUMPTION — SEE BELOW.'},
+     note:'USED FOR: THE RESPONSE-TIME MULTIPLIER IN GAP 01. THE MULTIPLIER IS DIRECTIONAL, NOT A PRECISE PRESENT-DAY MEASUREMENT.'},
+    {n:'Speed-to-lead benchmark — RevenueHero, 2024',
+     f:'Recent study of 1,000+ companies found over 63% never responded to an inbound lead at all, and the average response time exceeded 29 hours — confirming, 13 years after the HBR audit, that slow response remains the norm and the opportunity is still wide open.',
+     note:'RECENT CORROBORATION THAT THE PRINCIPLE STILL HOLDS. INDUSTRY BENCHMARK — WE RECOMMEND READING THE PRIMARY REPORT BEFORE RELYING ON THE EXACT FIGURES.'},
+    {n:'Local Consumer Review Survey 2026 — <a href="https://www.brightlocal.com/research/local-consumer-review-survey/" target="_blank" rel="noopener">BrightLocal</a>',
+     f:'In the 2026 edition (1,002 US consumers), 41% said they "always" read reviews when browsing local businesses — up sharply from 29% the year before — with the large majority reading them at least occasionally, and Google the most-used platform by a wide margin.',
+     note:'USED FOR: THE DIRECTION OF GAP 02. SAMPLE IS US CONSUMERS — TREAT AS DIRECTIONAL FOR AU. THE ENQUIRY-LIFT % ITSELF IS A MODEL ASSUMPTION — SEE BELOW.'},
     {n:'SMB call-answering studies — 411 Locals & Invoca',
      f:'411 Locals monitored 85 businesses across 58 industries and found only 37.8% of calls answered live. Invoca\'s call analytics report a ~27% missed-call rate in home services.',
      note:'NOTE: FIGURES AS REPORTED BY THE PUBLISHERS; PRIMARY REPORTS ARE NOT PUBLICLY HOSTED. OUR MISS-RATE DEFAULTS (18–30%) SIT AT OR BELOW THESE PUBLISHED RANGES.'}
