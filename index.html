@@ -29,7 +29,7 @@ body::after{
 }
 .hidden{display:none!important;}
 
-/* ── HEADER ── */
+/* — HEADER — */
 .hd{background:var(--charcoal);border-bottom:3px solid var(--orange);padding:0 28px;position:sticky;top:0;z-index:100;flex-shrink:0;}
 .hd-i{max-width:920px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:56px;}
 .logo{display:flex;align-items:center;gap:10px;}
@@ -37,7 +37,7 @@ body::after{
 .logo-n{font-family:'Manrope',sans-serif;font-weight:800;font-size:16px;color:#fff;letter-spacing:-.3px;}
 .hd-tag{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:1.5px;color:rgba(255,255,255,.4);text-transform:uppercase;}
 
-/* ── HERO — compact banner ── */
+/* — HERO — compact banner — */
 .hero{background:var(--charcoal);padding:26px 28px;position:relative;overflow:hidden;border-bottom:3px solid var(--orange);flex-shrink:0;}
 .hero::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--orange);}
 .hero-wm{position:absolute;right:-30px;bottom:-30px;width:180px;opacity:.05;pointer-events:none;}
@@ -51,7 +51,7 @@ body::after{
 .hs .hn{font-family:'Manrope',sans-serif;font-weight:800;font-size:28px;color:var(--orange);letter-spacing:-1px;line-height:1;}
 .hs .hl{font-family:'JetBrains Mono',monospace;font-size:9px;color:rgba(255,255,255,.4);letter-spacing:1px;text-transform:uppercase;margin-top:3px;max-width:150px;line-height:1.5;}
 
-/* ── MARKET SELECTOR ── */
+/* — MARKET SELECTOR — */
 .mkt-label{font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2px;color:var(--charcoal);margin-bottom:8px;}
 .mkt-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
 .mkt{display:flex;align-items:center;gap:7px;background:#fff;border:1.5px solid var(--rule);border-radius:20px;padding:8px 16px;cursor:pointer;font-family:'Manrope',sans-serif;font-size:12px;font-weight:700;color:var(--charcoal);transition:all .15s;}
@@ -60,7 +60,7 @@ body::after{
 .mkt .mkt-cur{font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:400;color:#999;letter-spacing:.5px;}
 .mkt.sel .mkt-cur{color:var(--orange);}
 
-/* ── SOURCES PANEL ── */
+/* — SOURCES PANEL — */
 .src-panel{background:#fff;border:1px solid var(--rule);border-radius:var(--rl);margin-bottom:16px;overflow:hidden;}
 .src-panel summary{cursor:pointer;padding:16px 20px;font-family:'Manrope',sans-serif;font-weight:700;font-size:13px;color:var(--charcoal);list-style:none;display:flex;align-items:center;justify-content:space-between;user-select:none;}
 .src-panel summary::-webkit-details-marker{display:none;}
@@ -76,7 +76,7 @@ body::after{
 .src-find{font-family:'Inter',sans-serif;font-size:12px;color:#666;line-height:1.6;}
 .src-note{font-family:'JetBrains Mono',monospace;font-size:9px;color:#aaa;letter-spacing:.3px;margin-top:4px;line-height:1.7;}
 
-/* ── PROGRESS ── */
+/* — PROGRESS — */
 .prog{background:var(--sand2);padding:11px 28px;border-bottom:1px solid var(--rule);flex-shrink:0;}
 .prog-i{max-width:920px;margin:0 auto;display:flex;align-items:center;}
 .sp{display:flex;align-items:center;gap:7px;font-family:'Manrope',sans-serif;font-size:11px;font-weight:700;color:#bbb;padding:5px 12px;border-radius:20px;transition:all .25s;}
@@ -87,13 +87,13 @@ body::after{
 .sp.done .sn{background:var(--teal);color:#fff;}
 .sc{flex:1;height:1px;background:var(--rule);margin:0 4px;}
 
-/* ── WRAP ── */
+/* — WRAP — */
 .wrap{max-width:920px;width:100%;margin:0 auto;padding:20px 28px 40px;}
 .sl{font-family:'Manrope',sans-serif;font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--orange);margin-bottom:4px;}
 .st{font-family:'Manrope',sans-serif;font-weight:800;font-size:26px;color:var(--charcoal);letter-spacing:-.5px;margin-bottom:4px;}
 .ss{font-family:'Inter',sans-serif;font-size:13px;color:#666;line-height:1.5;margin-bottom:14px;max-width:520px;}
 
-/* ── BUSINESS CARDS ── */
+/* — BUSINESS CARDS — */
 .bg{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px;}
 @media(max-width:580px){.bg{grid-template-columns:1fr 1fr;}}
 .bc{background:#fff;border:1.5px solid var(--rule);border-radius:var(--r);padding:16px 16px;cursor:pointer;transition:all .18s;position:relative;overflow:hidden;display:flex;align-items:center;gap:12px;}
@@ -110,7 +110,7 @@ body::after{
 .bc-tick svg{width:9px;height:9px;}
 .bc.sel .bc-tick{display:flex;}
 
-/* ── INPUTS ── */
+/* — INPUTS — */
 .ig2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:10px;}
 @media(max-width:560px){.ig2{grid-template-columns:1fr;}}
 .ig{background:#fff;border:1px solid var(--rule);border-radius:var(--r);padding:12px 14px;}
@@ -126,12 +126,12 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
 select{width:100%;padding:9px 12px;border:1px solid var(--rule);border-radius:var(--r);font-family:'Inter',sans-serif;font-size:13px;background:#fff;color:var(--charcoal);cursor:pointer;outline:none;}
 select:focus{border-color:var(--orange);}
 
-/* ── CONTEXT CARD ── */
+/* — CONTEXT CARD — */
 .ctx{background:var(--sand);border:1px solid var(--rule);border-left:4px solid var(--teal);border-radius:0 var(--r) var(--r) 0;padding:10px 14px;margin-bottom:12px;}
 .ctx-l{font-family:'Manrope',sans-serif;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:4px;}
 .ctx p{font-family:'Inter',sans-serif;font-size:12px;color:#555;line-height:1.55;}
 
-/* ── LEAD GATE FORM ── */
+/* — LEAD GATE FORM — */
 .gate-box{background:#fff;border:1px solid var(--rule);border-radius:var(--rl);padding:28px 28px;margin-bottom:20px;}
 .gate-box .gb-eyebrow{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--coral);margin-bottom:10px;}
 .gate-box .gb-title{font-family:'Manrope',sans-serif;font-weight:800;font-size:20px;color:var(--charcoal);letter-spacing:-.4px;margin-bottom:6px;}
@@ -168,7 +168,7 @@ select:focus{border-color:var(--orange);}
 .fe.show{display:block;}
 .privacy{font-family:'Inter',sans-serif;font-size:11px;color:#999;line-height:1.6;margin-top:8px;}
 
-/* ── LOADING STATE ── */
+/* — LOADING STATE — */
 .loading-overlay{
   display:none;align-items:center;justify-content:center;gap:12px;
   background:rgba(250,250,247,.92);border-radius:var(--rl);
@@ -179,7 +179,7 @@ select:focus{border-color:var(--orange);}
 @keyframes spin{to{transform:rotate(360deg);}}
 .loading-text{font-family:'Manrope',sans-serif;font-size:14px;font-weight:600;color:var(--charcoal);}
 
-/* ── BUTTONS ── */
+/* — BUTTONS — */
 .btn-p{background:var(--orange);color:#fff;font-family:'Manrope',sans-serif;font-weight:700;font-size:14px;padding:13px 28px;border:none;border-radius:var(--r);cursor:pointer;transition:background .15s;display:inline-flex;align-items:center;gap:7px;}
 .btn-p:hover{background:#bf3d12;}
 .btn-p:active{transform:scale(.98);}
@@ -188,7 +188,7 @@ select:focus{border-color:var(--orange);}
 .btn-s:hover{border-color:var(--orange);color:var(--orange);}
 .btn-row{display:flex;gap:10px;align-items:center;justify-content:flex-end;margin-top:14px;}
 
-/* ── RESULTS ── */
+/* — RESULTS — */
 .res-hero{background:var(--charcoal);border-radius:var(--rl);padding:32px 32px 28px;margin-bottom:16px;position:relative;overflow:hidden;}
 .res-hero::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--orange);}
 .rh-lbl{font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:20px;}
@@ -239,7 +239,7 @@ select:focus{border-color:var(--orange);}
 .disc{font-family:'JetBrains Mono',monospace;font-size:9px;color:#bbb;letter-spacing:.4px;line-height:1.9;text-align:center;margin-top:14px;}
 .mt20{margin-top:20px;}
 
-/* ── FOOTER ── */
+/* — FOOTER — */
 .ft{background:var(--slate);padding:18px 28px;}
 .ft-i{max-width:920px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
 .f-b{font-family:'Manrope',sans-serif;font-weight:800;font-size:14px;color:#fff;}
@@ -328,7 +328,7 @@ select:focus{border-color:var(--orange);}
       <div class="bc-tick"><svg><use href="#chk"/></svg></div>
     </div>
     <div class="bc" data-type="realestate" onclick="selectType(this)">
-      <div class="bc-icon">🏘</div>
+      <div class="bc-icon">🏠</div>
       <div class="bc-text"><div class="bc-name">Real estate agency</div><div class="bc-eg">Residential, commercial, rentals, property mgmt</div></div>
       <div class="bc-tick"><svg><use href="#chk"/></svg></div>
     </div>
@@ -420,6 +420,13 @@ select:focus{border-color:var(--orange);}
           <label class="fl" for="f-last">Last name</label>
           <input class="fi" type="text" id="f-last" placeholder="Rodriguez" autocomplete="family-name">
           <span class="fe" id="e-last">Please enter your last name</span>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-field full">
+          <label class="fl" for="f-business">Business name</label>
+          <input class="fi" type="text" id="f-business" placeholder="Your Business Pty Ltd" autocomplete="organization">
+          <span class="fe" id="e-business">Please enter your business name</span>
         </div>
       </div>
       <div class="form-row">
@@ -518,7 +525,7 @@ select:focus{border-color:var(--orange);}
 </footer>
 
 <script>
-/* ── PROTECTION ── */
+/* — PROTECTION — */
 document.addEventListener('contextmenu',e=>e.preventDefault());
 document.addEventListener('keydown',e=>{
   const k=e.key.toLowerCase();
@@ -527,7 +534,7 @@ document.addEventListener('keydown',e=>{
 });
 document.addEventListener('dragstart',e=>e.preventDefault());
 
-/* ── GHL CONFIG ──
+/* — GHL CONFIG —
    ROTATE THE API TOKEN after first successful test:
    Settings → Private Integrations → your integration → Rotate token
    Then paste the new token here and redeploy.
@@ -548,7 +555,7 @@ const GHL = {
   }
 };
 
-/* ── MARKET CONFIG ──
+/* — MARKET CONFIG —
    mult = approximate local-price conversion from AUD base defaults.
    These set the *starting position* of the sliders only — users adjust
    to their real numbers. Validate per-market defaults over time. */
@@ -557,7 +564,7 @@ const MKT = {
   us:{name:'the USA',  cur:'US$',code:'USD',mult:0.75,txn:{min:50,max:15000,step:50},    phone:'+1', wa:false}
 };
 
-/* ── BUSINESS TYPE DATA ──
+/* — BUSINESS TYPE DATA —
    miss   = share of enquiries missed or handled too slowly to count
             (model assumption informed by Invoca ~27% home-services
             missed-call rate and 411 Locals 62% SMB unanswered rate —
@@ -600,7 +607,7 @@ const BIZ = {
     d3:'Long sales cycles demand weeks of consistent follow-up. Without automation, warm vendor leads drift to more persistent agencies.',
     b1:'Sources: MIT/InsideSales 2007 · HBR 2011 (7× within 1 hour) · miss-rate is a model assumption',
     b2:'Source: BrightLocal Local Consumer Review Survey · lift % is a model assumption',
-    b3:'Model assumption: follow-up recovers 1.5% of non-converted enquiries (≈20% lift on close rate)'},
+    b3:'Model assumption: follow-up recovers 1.5% of non-converted enquiries (~20% lift on close rate)'},
   professional:{name:'Professional services',enq:14,txn:820,rev:10,team:2,miss:0.22,conv:0.30,rm:1.9,rlift:0.08,frRec:0.07,
     ctx:'In professional services, response speed signals competence — yet HBR\'s research found the average business takes 42 hours to first-respond to a new lead. High client lifetime value makes every mishandled enquiry disproportionately costly.',
     d1:'New-client enquiries answered next-day instead of within minutes — in a category where the first credible responder usually wins the engagement.',
@@ -619,12 +626,12 @@ const BIZ = {
     b3:'Model assumption: follow-up recovers 10% of non-converted enquiries'}
 };
 
-/* ── STATE ── */
+/* — STATE — */
 let bizType = null;
 let mktKey = 'au';
 let calcResults = {};
 
-/* ── NAVIGATION ── */
+/* — NAVIGATION — */
 function goStep1(){
   show('step-1');hide('step-2');hide('step-3');hide('step-4');
   setPills(1);scrollUp();
@@ -656,7 +663,7 @@ function setPills(a){
   });
 }
 
-/* ── BUSINESS TYPE & MARKET ── */
+/* — BUSINESS TYPE & MARKET — */
 function selectType(card){
   document.querySelectorAll('.bc').forEach(c=>c.classList.remove('sel'));
   card.classList.add('sel');
@@ -674,7 +681,7 @@ function selectMkt(pill){
   updatePhonePlaceholder();
 }
 
-/* ── DEFAULTS ── */
+/* — DEFAULTS — */
 function txnDefault(t){
   const m=MKT[mktKey];
   const raw=BIZ[t].txn*m.mult;
@@ -697,7 +704,7 @@ function slv(id){
   el.textContent=id==='txn'?MKT[mktKey].cur+v.toLocaleString():v;
 }
 
-/* ── CALCULATION ──
+/* — CALCULATION —
    Conservative model. Every leaked enquiry is valued at close-rate × one
    transaction — never at full transaction value, and never at lifetime value.
    Gap 1: enquiries lost to missed/slow response × close rate × txn
@@ -763,7 +770,7 @@ function fmt(n){
   return c+Math.round(n).toLocaleString();
 }
 
-/* ── SOURCES PANEL ── */
+/* — SOURCES PANEL — */
 function renderSources(){
   const m=MKT[mktKey];
   const items=[
@@ -795,12 +802,13 @@ function renderSources(){
     `<div class="src-item"><div class="src-name">${s.n}</div><div class="src-find">${s.f}</div><div class="src-note">${s.note}</div></div>`).join('');
 }
 
-/* ── FORM VALIDATION ── */
+/* — FORM VALIDATION — */
 function validate(){
   let ok=true;
   const checks=[
     {id:'f-first',err:'e-first',test:v=>v.trim().length>0},
     {id:'f-last',err:'e-last',test:v=>v.trim().length>0},
+    {id:'f-business',err:'e-business',test:v=>v.trim().length>0},
     {id:'f-email',err:'e-email',test:v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim())},
     {id:'f-phone',err:'e-phone',test:v=>v.replace(/\D/g,'').length>=6},
   ];
@@ -819,7 +827,7 @@ function validate(){
   return ok;
 }
 
-/* ── PHONE FORMAT ── */
+/* — PHONE FORMAT — */
 function updatePhonePlaceholder(){
   const sel=document.getElementById('f-country');
   const opt=sel.options[sel.selectedIndex];
@@ -844,13 +852,15 @@ function formatPhone(raw){
   return dialCode+digits;
 }
 
-/* ── GHL API CALL ── */
-async function pushToGHL(firstName,lastName,email,phone){
+/* — GHL API CALL — */
+async function pushToGHL(firstName,lastName,businessName,email,phone){
   const {b,enqW,txn,revs,rLabel,monthly,annual,recovery}=calcResults;
   const m=MKT[mktKey];
   const payload={
     locationId:GHL.locationId,
-    firstName,lastName,email,
+    firstName,lastName,
+    companyName:businessName,
+    email,
     phone:formatPhone(phone),
     tags:['calculator-lead','market-'+mktKey,'lang-en'],
     source:'Revenue Leak Calculator — opiferai.com ('+m.name+')',
@@ -877,12 +887,13 @@ async function pushToGHL(firstName,lastName,email,phone){
   return res.ok;
 }
 
-/* ── FORM SUBMIT ── */
+/* — FORM SUBMIT — */
 async function handleSubmit(e){
   e.preventDefault();
   if(!validate())return;
   const firstName=document.getElementById('f-first').value.trim();
   const lastName=document.getElementById('f-last').value.trim();
+  const businessName=document.getElementById('f-business').value.trim();
   const email=document.getElementById('f-email').value.trim();
   const phone=document.getElementById('f-phone').value.trim();
   const submitBtn=document.getElementById('submit-btn');
@@ -894,7 +905,7 @@ async function handleSubmit(e){
   loadingState.classList.add('show');
 
   try{
-    await pushToGHL(firstName,lastName,email,phone);
+    await pushToGHL(firstName,lastName,businessName,email,phone);
   }catch(err){
     console.warn('GHL connection issue — showing results anyway:',err);
   }
