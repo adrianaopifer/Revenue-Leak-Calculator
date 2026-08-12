@@ -167,6 +167,9 @@ select:focus{border-color:var(--orange);}
 .fe{font-family:'Inter',sans-serif;font-size:11px;color:#E24B4A;margin-top:2px;display:none;}
 .fe.show{display:block;}
 .privacy{font-family:'Inter',sans-serif;font-size:11px;color:#999;line-height:1.6;margin-top:8px;}
+.privacy a{color:var(--orange);text-decoration:underline;}
+.sms-check{display:flex;align-items:flex-start;gap:8px;font-family:'Inter',sans-serif;font-size:12px;color:#666;line-height:1.5;cursor:pointer;margin-top:2px;}
+.sms-check input{margin-top:2px;flex-shrink:0;cursor:pointer;}
 
 /* — LOADING STATE — */
 .loading-overlay{
@@ -457,7 +460,15 @@ select:focus{border-color:var(--orange);}
           <span class="fe" id="e-phone">Please enter your phone number</span>
         </div>
       </div>
-      <p class="privacy">By submitting this form you agree to receive a follow-up from OPIFER about your revenue leak report. We respect your privacy and will never share your information. Unsubscribe any time.</p>
+      <div class="form-row">
+        <div class="form-field full">
+          <label class="sms-check" for="f-sms-consent">
+            <input type="checkbox" id="f-sms-consent">
+            <span>Also text me updates about my report. Msg &amp; data rates may apply. Reply STOP anytime to unsubscribe.</span>
+          </label>
+        </div>
+      </div>
+      <p class="privacy">By submitting this form you agree to receive a follow-up email from OPIFER about your revenue leak report. Your information is handled under our <a href="https://opiferai.com/privacy-policy" target="_blank" rel="noopener">Privacy Policy</a> and shared only with the tools we use to deliver it. Unsubscribe any time.</p>
       <div class="btn-row">
         <button class="btn-s" type="button" onclick="goStep2()">← Back</button>
         <button class="btn-p" type="submit" id="submit-btn">Show my revenue leak <svg width="15" height="15" style="display:inline-block;vertical-align:middle;"><use href="#arr"/></svg></button>
@@ -520,7 +531,7 @@ select:focus{border-color:var(--orange);}
 <footer class="ft">
   <div class="ft-i">
     <div><div class="f-b">OPIFER · by ADMA Consulting</div><div class="f-t">Strategic Instincts. Measurable Growth.</div></div>
-    <div class="f-l">© 2026 OPIFER by ADMA Consulting Pty Ltd<br>Melbourne · Madrid · LATAM · USA<br>CONFIDENTIAL · NOT FOR REPRODUCTION · opiferai.com</div>
+    <div class="f-l">© 2026 OPIFER by ADMA Consulting Pty Ltd<br>Melbourne · Madrid · LATAM · USA<br>CONFIDENTIAL · NOT FOR REPRODUCTION · opiferai.com<br><a href="https://opiferai.com/privacy-policy" style="color:inherit;">Privacy Policy</a></div>
   </div>
 </footer>
 
@@ -853,7 +864,7 @@ function formatPhone(raw){
 }
 
 /* — GHL API CALL — */
-async function pushToGHL(firstName,lastName,businessName,email,phone){
+async function pushToGHL(firstName,lastName,businessName,email,phone,smsConsent){
   const {b,enqW,txn,revs,rLabel,monthly,annual,recovery}=calcResults;
   const m=MKT[mktKey];
   const payload={
@@ -862,7 +873,7 @@ async function pushToGHL(firstName,lastName,businessName,email,phone){
     companyName:businessName,
     email,
     phone:formatPhone(phone),
-    tags:['calculator-lead','market-'+mktKey,'lang-en'],
+    tags:['calculator-lead','market-'+mktKey,'lang-en',smsConsent?'sms-optin':'sms-optout'],
     source:'Revenue Leak Calculator — opiferai.com ('+m.name+')',
     customFields:[
       {key:GHL.fields.businessType,    field_value:b.name},
@@ -896,6 +907,7 @@ async function handleSubmit(e){
   const businessName=document.getElementById('f-business').value.trim();
   const email=document.getElementById('f-email').value.trim();
   const phone=document.getElementById('f-phone').value.trim();
+  const smsConsent=document.getElementById('f-sms-consent').checked;
   const submitBtn=document.getElementById('submit-btn');
   const loadingState=document.getElementById('loading-state');
   const form=document.getElementById('lead-form');
@@ -905,7 +917,7 @@ async function handleSubmit(e){
   loadingState.classList.add('show');
 
   try{
-    await pushToGHL(firstName,lastName,businessName,email,phone);
+    await pushToGHL(firstName,lastName,businessName,email,phone,smsConsent);
   }catch(err){
     console.warn('GHL connection issue — showing results anyway:',err);
   }
