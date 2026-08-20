@@ -1,0 +1,17 @@
+name: Calculator SEO check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate Calculator SEO
+        run: python3 scripts/validate-seo.py
